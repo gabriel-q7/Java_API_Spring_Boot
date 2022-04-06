@@ -12,15 +12,4 @@ public record LiveStream(String id,
                          LocalDateTime startDate,
                          LocalDateTime endDate)
     {
-    /*
-    public LiveStream {
-        if (id == null) {
-            throw new IllegalArgumentException("Id cannot be null");
-        }
-    }
-
-    public boolean isLive() {
-        return LocalDateTime.now().isAfter(startDate) && LocalDateTime.now().isBefore(endDate);
-    }
-     */
 }

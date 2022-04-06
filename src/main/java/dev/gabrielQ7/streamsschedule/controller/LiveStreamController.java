@@ -1,9 +1,9 @@
 package dev.gabrielQ7.streamsschedule.controller;
 
+import dev.gabrielQ7.streamsschedule.exception.LiveStreamNotFoundException;
 import dev.gabrielQ7.streamsschedule.model.LiveStream;
 import dev.gabrielQ7.streamsschedule.repository.LiveStreamRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class LiveStreamController {
 
     // GET http://localhost:8081/streams/{id}
     @GetMapping("/{id}")
-    public LiveStream findById(@PathVariable String id) {
+    public LiveStream findById(@PathVariable String id) throws LiveStreamNotFoundException {
         return repository.findById(id);
     }
 

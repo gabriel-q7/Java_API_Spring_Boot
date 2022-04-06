@@ -1,5 +1,6 @@
 package dev.gabrielQ7.streamsschedule.repository;
 
+import dev.gabrielQ7.streamsschedule.exception.LiveStreamNotFoundException;
 import dev.gabrielQ7.streamsschedule.model.LiveStream;
 import org.springframework.stereotype.Repository;
 
@@ -31,14 +32,11 @@ public class LiveStreamRepository {
     public List<LiveStream> findAll(){
         return streams;
     }
-/*
+
     public LiveStream findById(String id) throws LiveStreamNotFoundException {
         return streams.stream().filter(stream -> stream.id().equals(id)).findFirst().orElseThrow(LiveStreamNotFoundException::new);
     }
- */
-    public LiveStream findById(String id) {
-        return streams.stream().filter(stream -> stream.id().equals(id)).findFirst().orElseThrow();
-    }
+
 
     public LiveStream create(LiveStream stream) {
         streams.add(stream);
